@@ -24,6 +24,7 @@ require_once LEADYIA_PATH . 'core/api-client.php';
 require_once LEADYIA_PATH . 'core/auth.php';
 require_once LEADYIA_PATH . 'core/service/api.php';
 require_once LEADYIA_PATH . 'core/updater.php';
+require_once LEADYIA_PATH . 'core/install.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,14 @@ require_once LEADYIA_PATH . 'admin/enqueue.php';
 */
 
 require_once LEADYIA_PATH . 'public/loader.php';
+
+/*
+|--------------------------------------------------------------------------
+| AUTO REGISTER (Viral SaaS)
+|--------------------------------------------------------------------------
+*/
+
+register_activation_hook(
+    __FILE__,
+    'leadyia_auto_register'
+);
